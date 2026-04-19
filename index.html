@@ -1,1079 +1,1252 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cesped Natural MyS | Espacios verdes, cercos vivos y vivero online</title>
-  <meta name="description" content="Creadores de espacios verdes. Especialistas en cercos vivos, vivero online, plantas de interior y exterior, grama bahiana, riego automatico, nivelacion y obra completa." />
-  <meta name="theme-color" content="#2e7d32" />
-
-  <meta property="og:title" content="Cesped Natural MyS" />
-  <meta property="og:description" content="Creadores de espacios verdes, especialistas en cercos vivos, vivero online, plantas de interior y exterior." />
-  <meta property="og:image" content="https://iili.io/BCP8gRe.jpg" />
-  <meta property="og:type" content="website" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Cesped Natural MyS" />
-  <meta name="twitter:description" content="Creadores de espacios verdes, especialistas en cercos vivos, vivero online, plantas de interior y exterior." />
-  <meta name="twitter:image" content="https://iili.io/BCP8gRe.jpg" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg: #f6fbf4;
-      --surface: rgba(255,255,255,.82);
-      --surface-strong: #ffffff;
-      --text: #143016;
-      --muted: #4a644d;
-      --line: rgba(20,48,22,.12);
-      --brand: #2e7d32;
-      --brand-2: #8bc34a;
-      --brand-3: #1b5e20;
-      --shadow: 0 14px 45px rgba(23, 51, 25, .12);
-      --radius: 24px;
-      --hero-overlay: linear-gradient(90deg, rgba(10,25,12,.70) 0%, rgba(10,25,12,.42) 40%, rgba(10,25,12,.18) 100%);
-    }
-
-    body.dark{
-      --bg: #081109;
-      --surface: rgba(10,20,12,.78);
-      --surface-strong: #0e1b10;
-      --text: #eef7ec;
-      --muted: #b1c7b2;
-      --line: rgba(255,255,255,.10);
-      --brand: #8bc34a;
-      --brand-2: #b7e16f;
-      --brand-3: #d7f4a6;
-      --shadow: 0 14px 45px rgba(0, 0, 0, .28);
-      --hero-overlay: linear-gradient(90deg, rgba(0,0,0,.76) 0%, rgba(0,0,0,.50) 40%, rgba(0,0,0,.20) 100%);
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:'Inter',system-ui,sans-serif;
-      background:
-        radial-gradient(circle at top right, rgba(139,195,74,.13), transparent 20%),
-        radial-gradient(circle at bottom left, rgba(46,125,50,.12), transparent 18%),
-        var(--bg);
-      color:var(--text);
-      line-height:1.5;
-    }
-
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-    .container{width:min(1180px, calc(100% - 32px)); margin:0 auto}
-
-    .topbar{
-      position:sticky; top:0; z-index:1000;
-      backdrop-filter: blur(16px);
-      background: color-mix(in srgb, var(--bg) 72%, transparent);
-      border-bottom:1px solid var(--line);
-    }
-
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:16px; min-height:78px;
-    }
-
-    .brand{
-      display:flex; align-items:center; gap:12px; min-width:0;
-    }
-
-    .brand__logo{
-      width:52px; height:52px; border-radius:16px;
-      object-fit:cover; border:1px solid var(--line);
-      box-shadow: var(--shadow);
-      flex-shrink:0;
-    }
-
-    .brand__text{
-      display:flex; flex-direction:column; min-width:0;
-    }
-
-    .brand__title{
-      font-weight:800; font-size:1rem; letter-spacing:-.02em;
-      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
-    }
-
-    .brand__sub{
-      font-size:.82rem; color:var(--muted);
-      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
-    }
-
-    .nav__links{
-      display:flex; align-items:center; gap:22px;
-    }
-
-    .nav__links a{
-      color:var(--muted); font-weight:600; font-size:.95rem;
-      transition:.25s ease;
-    }
-
-    .nav__links a:hover{color:var(--text)}
-
-    .nav__actions{
-      display:flex; align-items:center; gap:10px;
-    }
-
-    .theme-btn, .menu-btn{
-      width:46px; height:46px; border-radius:14px; border:1px solid var(--line);
-      background:var(--surface); color:var(--text); cursor:pointer;
-      display:grid; place-items:center; box-shadow:var(--shadow);
-    }
-
-    .menu-btn{display:none}
-
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:14px 20px; border-radius:16px; font-weight:700; border:1px solid transparent;
-      transition:.25s ease; cursor:pointer;
-    }
-
-    .btn--primary{
-      background:linear-gradient(135deg, var(--brand), var(--brand-2));
-      color:#fff; box-shadow:0 16px 34px rgba(46,125,50,.25);
-    }
-
-    .btn--primary:hover{transform:translateY(-2px)}
-    .btn--secondary{
-      background:var(--surface); border-color:var(--line); color:var(--text);
-      box-shadow:var(--shadow);
-    }
-    .btn--secondary:hover{transform:translateY(-2px)}
-
-    .hero{
-      padding:26px 0 34px;
-    }
-
-    .hero__wrap{
-      min-height:78svh;
-      border-radius:32px;
-      overflow:hidden;
-      position:relative;
-      border:1px solid var(--line);
-      box-shadow:var(--shadow);
-      background:
-        var(--hero-overlay),
-        url('https://iili.io/BChurBt.jpg') center center / cover no-repeat;
-      display:grid;
-      align-items:end;
-    }
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cesped Natural MyS | Espacios verdes, cercos vivos y vivero online</title>
+    <meta name="description" content="Creadores de espacios verdes con soluciones naturales para cada proyecto. Especialistas en cercos vivos, vivero online, plantas de interior y exterior. ¡Transformá tu espacio hoy!">
+    <meta property="og:title" content="Cesped Natural MyS | Espacios verdes, cercos vivos y vivero online">
+    <meta property="og:description" content="Creadores de espacios verdes con soluciones naturales para cada proyecto. Especialistas en cercos vivos, vivero online, plantas de interior y exterior.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/4CAF50/ffffff?text=Cesped+Natural+MyS">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#4CAF50">
     
-    .hero__logo{
-      position:absolute;
-      right:clamp(20px, 4vw, 42px);
-      top:50%;
-      transform:translateY(-50%);
-      width:min(34vw, 430px);
-      z-index:2;
-      pointer-events:none;
-    }
-
-    .hero__logo img{
-      width:100%;
-      height:auto;
-      object-fit:contain;
-      filter: drop-shadow(0 18px 40px rgba(0,0,0,.28));
-    }
-
-.hero__content{
-      position:relative;
-      z-index:2;
-      max-width:720px;
-      padding: clamp(28px, 5vw, 58px);
-      color:#fff;
-    }
-
-    .eyebrow{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:10px 14px;
-      border:1px solid rgba(255,255,255,.18);
-      border-radius:999px;
-      background:rgba(255,255,255,.10);
-      backdrop-filter: blur(12px);
-      font-size:.92rem;
-      font-weight:700;
-      margin-bottom:18px;
-    }
-
-    h1{
-      margin:0 0 16px;
-      font-size:clamp(2rem, 5vw, 4.5rem);
-      line-height:.98;
-      letter-spacing:-.04em;
-    }
-
-    .hero p{
-      margin:0;
-      max-width:620px;
-      font-size:clamp(1rem, 1.6vw, 1.18rem);
-      color:rgba(255,255,255,.92);
-    }
-
-    .hero__actions{
-      display:flex; flex-wrap:wrap; gap:12px;
-      margin-top:26px;
-    }
-
-    .hero__actions .btn--secondary{
-      background:rgba(255,255,255,.12);
-      border-color:rgba(255,255,255,.18);
-      color:#fff;
-      box-shadow:none;
-      backdrop-filter:blur(14px);
-    }
-
-    .hero__chips{
-      display:grid;
-      grid-template-columns:repeat(5, minmax(0,1fr));
-      gap:12px;
-      margin-top:18px;
-      padding:0 12px 12px;
-    }
-
-    .chip{
-      padding:14px 16px;
-      border-radius:18px;
-      background:var(--surface);
-      border:1px solid var(--line);
-      box-shadow:var(--shadow);
-      text-align:center;
-      font-weight:700;
-      color:var(--text);
-      backdrop-filter: blur(12px);
-    }
-
-    section{
-      padding:72px 0;
-    }
-
-    .section-head{
-      display:flex; align-items:end; justify-content:space-between; gap:20px;
-      margin-bottom:28px;
-    }
-
-    .section-head h2{
-      margin:0 0 8px;
-      font-size:clamp(1.8rem, 3vw, 3rem);
-      line-height:1;
-      letter-spacing:-.03em;
-    }
-
-    .section-head p{
-      margin:0; color:var(--muted); max-width:620px;
-    }
-
-    .grid-3{
-      display:grid;
-      grid-template-columns:repeat(3, minmax(0,1fr));
-      gap:22px;
-    }
-
-    .service{
-      background:var(--surface);
-      border:1px solid var(--line);
-      border-radius:26px;
-      overflow:hidden;
-      box-shadow:var(--shadow);
-      display:flex;
-      flex-direction:column;
-      height:100%;
-    }
-
-    .service__media{
-      aspect-ratio: 16 / 11;
-      overflow:hidden;
-      background:#dfead9;
-    }
-
-    .service__media img{
-      width:100%; height:100%; object-fit:cover;
-      transition:transform .45s ease;
-    }
-
-    .service:hover .service__media img{
-      transform:scale(1.05);
-    }
-
-    .service__body{
-      padding:22px;
-      display:flex; flex-direction:column; gap:12px; flex:1;
-    }
-
-    .service__body h3{
-      margin:0; font-size:1.2rem; letter-spacing:-.02em;
-    }
-
-    .service__body p{
-      margin:0; color:var(--muted);
-    }
-
-    .service__body .btn{
-      margin-top:auto;
-      width:100%;
-    }
-
-    .steps{
-      display:grid;
-      grid-template-columns:repeat(4, minmax(0,1fr));
-      gap:18px;
-    }
-
-    .step{
-      background:var(--surface);
-      border:1px solid var(--line);
-      border-radius:24px;
-      padding:22px;
-      box-shadow:var(--shadow);
-    }
-
-    .step__num{
-      width:42px; height:42px; border-radius:14px;
-      display:grid; place-items:center;
-      background:linear-gradient(135deg, var(--brand), var(--brand-2));
-      color:#fff; font-weight:800; margin-bottom:14px;
-    }
-
-    .step h3{
-      margin:0 0 8px; font-size:1.08rem; letter-spacing:-.02em;
-    }
-
-    .step p{
-      margin:0; color:var(--muted);
-    }
-
-    .gallery{
-      display:grid;
-      grid-template-columns:repeat(4, minmax(0,1fr));
-      gap:14px;
-    }
-
-    .gallery__item{
-      border-radius:22px;
-      overflow:hidden;
-      border:1px solid var(--line);
-      box-shadow:var(--shadow);
-      background:var(--surface-strong);
-      min-height:220px;
-    }
-
-    .gallery__item img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      transition:transform .4s ease;
-    }
-
-    .gallery__item:hover img{
-      transform:scale(1.04);
-    }
-
-    .highlight{
-      background:linear-gradient(135deg, rgba(46,125,50,.14), rgba(139,195,74,.10));
-      border:1px solid var(--line);
-      border-radius:32px;
-      box-shadow:var(--shadow);
-      overflow:hidden;
-    }
-
-    .highlight__wrap{
-      display:grid;
-      grid-template-columns:1.15fr .85fr;
-      gap:0;
-      align-items:stretch;
-    }
-
-    .highlight__content{
-      padding:clamp(28px, 4vw, 52px);
-    }
-
-    .highlight__content h2{
-      margin:0 0 14px; font-size:clamp(2rem, 3vw, 3.2rem); line-height:1; letter-spacing:-.03em;
-    }
-
-    .highlight__content p{
-      margin:0 0 22px; color:var(--muted); max-width:620px;
-    }
-
-    .checklist{
-      display:grid; gap:12px; margin:0 0 26px; padding:0; list-style:none;
-    }
-
-    .checklist li{
-      display:flex; gap:12px; align-items:flex-start;
-      padding:14px 16px;
-      background:var(--surface);
-      border:1px solid var(--line);
-      border-radius:18px;
-    }
-
-    .check{
-      flex:0 0 26px;
-      width:26px; height:26px; border-radius:999px;
-      background:linear-gradient(135deg, var(--brand), var(--brand-2));
-      color:#fff; display:grid; place-items:center;
-      font-weight:900;
-    }
-
-    .highlight__media img{
-      width:100%; height:100%; object-fit:cover;
-    }
-
-    
-    .info-strip{
-      margin-top:28px;
-      display:grid;
-      grid-template-columns:repeat(4, minmax(0,1fr));
-      gap:16px;
-    }
-
-    .info-strip__item{
-      background:var(--surface);
-      border:1px solid var(--line);
-      border-radius:20px;
-      padding:18px;
-      box-shadow:var(--shadow);
-    }
-
-    .info-strip__item h3{
-      margin:0 0 8px;
-      font-size:1rem;
-      letter-spacing:-.02em;
-    }
-
-    .info-strip__item p{
-      margin:0;
-      color:var(--muted);
-      font-size:.96rem;
-    }
-
-.faq{
-      display:grid; gap:14px;
-    }
-
-    details{
-      background:var(--surface);
-      border:1px solid var(--line);
-      border-radius:22px;
-      padding:20px 22px;
-      box-shadow:var(--shadow);
-    }
-
-    summary{
-      cursor:pointer;
-      list-style:none;
-      font-weight:700;
-    }
-
-    summary::-webkit-details-marker{display:none}
-    details p{
-      margin:14px 0 0; color:var(--muted);
-    }
-
-    .cta{
-      position:relative;
-      overflow:hidden;
-      border-radius:32px;
-      background:
-        linear-gradient(135deg, rgba(17,72,26,.95), rgba(46,125,50,.88)),
-        url('https://iili.io/BCVYABt.png') center / cover no-repeat;
-      color:#fff;
-      border:1px solid rgba(255,255,255,.1);
-      box-shadow:var(--shadow);
-    }
-
-    .cta__inner{
-      padding:clamp(28px, 4vw, 56px);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:22px;
-      flex-wrap:wrap;
-    }
-
-    .cta h2{
-      margin:0 0 10px;
-      font-size:clamp(1.8rem, 3vw, 3rem);
-      line-height:1;
-      letter-spacing:-.03em;
-    }
-
-    .cta p{
-      margin:0; max-width:700px; color:rgba(255,255,255,.9);
-    }
-
-    footer{
-      padding:24px 0 110px;
-    }
-
-    .footer{
-      background:var(--surface);
-      border:1px solid var(--line);
-      border-radius:28px;
-      box-shadow:var(--shadow);
-      padding:24px;
-      display:grid;
-      grid-template-columns:1.2fr .8fr;
-      gap:20px;
-    }
-
-    .footer h3{
-      margin:0 0 10px;
-      font-size:1.05rem;
-    }
-
-    .footer p, .footer a{
-      margin:0;
-      color:var(--muted);
-    }
-
-    .footer__links{
-      display:grid; gap:10px; justify-items:start;
-    }
-
-    .creator{
-      margin-top:10px;
-      font-size:.95rem;
-      color:var(--muted);
-    }
-
-    .creator a{
-      color:var(--brand);
-      font-weight:800;
-    }
-
-    .wa-float{
-      position:fixed;
-      right:18px;
-      bottom:18px;
-      width:64px;
-      height:64px;
-      border-radius:20px;
-      background:var(--surface-strong);
-      border:1px solid var(--line);
-      box-shadow:0 18px 40px rgba(0,0,0,.16);
-      display:grid;
-      place-items:center;
-      z-index:1100;
-      transition:.25s ease;
-    }
-
-    .wa-float:hover{transform:translateY(-3px)}
-    .wa-float img{
-      width:34px;
-      height:34px;
-      object-fit:contain;
-    }
-
-    .mobile-panel{
-      display:none;
-    }
-
-    @media (max-width: 1080px){
-      .grid-3{grid-template-columns:repeat(2, minmax(0,1fr))}
-      .gallery{grid-template-columns:repeat(3, minmax(0,1fr))}
-      .steps{grid-template-columns:repeat(2, minmax(0,1fr))}
-      .highlight__wrap{grid-template-columns:1fr}
-      .footer{grid-template-columns:1fr}
-      .hero__chips{grid-template-columns:repeat(3, minmax(0,1fr))}
-      .info-strip{grid-template-columns:repeat(2, minmax(0,1fr))}
-    }
-
-    @media (max-width: 820px){
-      .menu-btn{display:grid}
-      .nav__links, .nav__actions .btn--primary{display:none}
-      .hero__wrap{min-height:72svh; background-position:center}
-      .hero__logo{width:min(32vw, 320px); right:18px;}
-      .hero__chips{grid-template-columns:repeat(2, minmax(0,1fr))}
-      .section-head{flex-direction:column; align-items:flex-start}
-      .gallery{grid-template-columns:repeat(2, minmax(0,1fr))}
-      .mobile-panel{
-        display:grid;
-        gap:10px;
-        padding:0 0 16px;
-        max-height:0;
-        overflow:hidden;
-        transition:max-height .35s ease;
-      }
-      .mobile-panel.open{max-height:420px}
-      .mobile-panel a, .mobile-panel button{
-        width:100%;
-      }
-      .mobile-link{
-        padding:14px 16px;
-        background:var(--surface);
-        border:1px solid var(--line);
-        border-radius:16px;
-        font-weight:700;
-        color:var(--text);
-        text-align:left;
-      }
-    }
-
-    @media (max-width: 640px){
-      .container{width:min(100% - 20px, 1180px)}
-      .hero{padding-top:14px}
-      .hero__wrap{border-radius:26px}
-      .hero__content{padding:22px}
-      .hero__logo{position:static; transform:none; width:min(72vw, 280px); margin:0 auto 18px; order:-1;}
-      .hero__actions{display:grid; grid-template-columns:1fr}
-      .hero__actions .btn{width:100%}
-      .hero__chips{grid-template-columns:1fr}
-      .grid-3, .steps, .gallery, .info-strip{grid-template-columns:1fr}
-      section{padding:56px 0}
-      .wa-float{
-        width:58px; height:58px; right:14px; bottom:14px;
-      }
-      footer{padding-bottom:96px}
-    }
-  </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #4CAF50;
+            --primary-dark: #388E3C;
+            --secondary: #8BC34A;
+            --accent: #FFC107;
+            --text-dark: #2C3E50;
+            --text-light: #7F8C8D;
+            --bg-light: #F8F9FA;
+            --white: #FFFFFF;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --shadow-sm: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .cta-button {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .cta-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.9), rgba(139, 195, 74, 0.9)),
+                        url('https://images.unsplash.com/photo-1585435557343-3b09503ec46e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.1);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.1; }
+            50% { opacity: 0.2; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--text-dark);
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+            background: #FFB300;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--white);
+            padding: 4rem 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 0;
+            background: var(--bg-light);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            color: var(--white);
+        }
+
+        .service-card h3 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            color: var(--text-dark);
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .stars {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 5rem 0;
+            background: var(--bg-light);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(76, 175, 80, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-text {
+            color: var(--white);
+            text-align: center;
+            padding: 1rem;
+        }
+
+        /* Process Section */
+        .process {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            position: relative;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--white);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover .step-number {
+            transform: scale(1.1);
+            background: var(--primary-dark);
+        }
+
+        .step-title {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .step-description {
+            color: var(--text-light);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-form h3 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #E0E0E0;
+            border-radius: 8px;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-submit {
+            background: var(--primary);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .form-submit:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: var(--white);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #BDC3C7;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #34495E;
+            padding-top: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: var(--shadow);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: var(--white);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="container">
-      <nav class="nav">
-        <a href="#" class="brand" aria-label="Cesped Natural MyS">
-          <img class="brand__logo" src="https://iili.io/BCVy0ZP.png" alt="Logo Cesped Natural MyS" />
-          <div class="brand__text">
-            <span class="brand__title">Cesped Natural MyS</span>
-            <span class="brand__sub">Cercos vivos, vivero online y plantas de interior y exterior</span>
-          </div>
-        </a>
+    <!-- Header -->
+    <header id="header">
+        <nav class="container">
+            <a href="#" class="logo">Cesped Natural MyS</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#proceso">Proceso</a></li>
+                <li><a href="#trabajos">Trabajos</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
+                <li><a href="#contacto" class="cta-button">Contacto</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
 
-        <div class="nav__links">
-          <a href="#servicios">Servicios</a>
-          <a href="#proceso">Como trabajamos</a>
-          <a href="#galeria">Trabajos</a>
-          <a href="#variedades">Variedades</a>
-          <a href="#faq">FAQ</a>
-        </div>
-
-        <div class="nav__actions">
-          <button class="theme-btn" id="themeBtn" aria-label="Cambiar tema">◐</button>
-          <a class="btn btn--primary" href="https://wa.me/5491126447230?text=Hola%20quiero%20consultar%20por%20grama%20bahiana%20y%20obra%20completa." target="_blank" rel="noopener">Pedir cotizacion</a>
-          <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
-        </div>
-      </nav>
-
-      <div class="mobile-panel" id="mobilePanel">
-        <a class="mobile-link" href="#servicios">Servicios</a>
-        <a class="mobile-link" href="#proceso">Como trabajamos</a>
-        <a class="mobile-link" href="#galeria">Trabajos</a>
-        <a class="mobile-link" href="#variedades">Variedades</a>
-        <a class="mobile-link" href="#faq">FAQ</a>
-        <button class="mobile-link" id="mobileThemeBtn" type="button">Cambiar tema</button>
-        <a class="btn btn--primary" href="https://wa.me/5491126447230?text=Hola%20quiero%20pedir%20una%20cotizacion%20por%20WhatsApp." target="_blank" rel="noopener">Pedir cotizacion</a>
-      </div>
-    </div>
-  </header>
-
-  <main>
+    <!-- Hero Section -->
     <section class="hero">
-      <div class="container">
-        <div class="hero__wrap">
-          <div class="hero__logo" aria-hidden="true">
-            <img src="https://iili.io/BC85Bj9.png" alt="" />
-          </div>
-          <div class="hero__content">
-            <span class="eyebrow">Creadores de espacios verdes · Cercos vivos · Vivero online</span>
-            <h1>Creadores de espacios verdes con soluciones naturales para cada proyecto</h1>
-            <p>Especialistas en cercos vivos, vivero online, plantas de interior y exterior, grama bahiana, riego automatico, nivelacion y obra completa para hogares, jardines y proyectos exteriores.</p>
-            <div class="hero__actions">
-              <a class="btn btn--primary" href="https://wa.me/5491126447230?text=Hola%20quiero%20consultar%20por%20alfombras%20naturales%20de%20grama%20bahiana." target="_blank" rel="noopener">Pedir cotizacion por WhatsApp</a>
-              <a class="btn btn--secondary" href="#servicios">Ver servicios</a>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transformá tu espacio en un paraíso natural</h1>
+                <p class="subtitle">Especialistas en césped natural, cercos vivos y soluciones integrales para espacios verdes</p>
+                <div class="hero-buttons">
+                    <a href="https://wa.me/5491126447230?text=Hola%20quiero%20consultar%20por%20grama%20bahiana%20y%20obra%20completa." class="btn-primary">Consultar ahora</a>
+                    <a href="#servicios" class="btn-secondary">Ver servicios</a>
+                </div>
             </div>
-          </div>
         </div>
-
-        <div class="hero__chips">
-          <div class="chip">Grama bahiana pura</div>
-          <div class="chip">Cercos vivos</div>
-          <div class="chip">Riego automatico</div>
-          <div class="chip">Nivelacion</div>
-          <div class="chip">Plantas de interior y exterior</div>
-          <div class="chip">Obra completa</div>
-        </div>
-      </div>
     </section>
 
-    <section id="servicios">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Servicios principales</h2>
-            <p>Soluciones para espacios verdes, hogares, jardines y proyectos exteriores con enfoque natural, prolijo y funcional.</p>
-          </div>
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="500">0</span>
+                    <p class="stat-label">Trabajos realizados</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="15">0</span>
+                    <p class="stat-label">Años de experiencia</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="98">0</span>
+                    <p class="stat-label">Clientes satisfechos</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="24">0</span>
+                    <p class="stat-label">Atención 24/7</p>
+                </div>
+            </div>
         </div>
-
-        <div class="grid-3">
-          <article class="service">
-            <div class="service__media">
-              <img src="https://iili.io/BCEryQI.png" alt="Grama bahiana pura" />
-            </div>
-            <div class="service__body">
-              <h3>Grama bahiana pura</h3>
-              <p>Alfombras naturales de grama bahiana para lograr espacios verdes prolijos, frescos y duraderos.</p>
-              <a class="btn btn--primary" href="https://wa.me/5491126447230?text=Hola%20quiero%20consultar%20por%20grama%20bahiana%20pura." target="_blank" rel="noopener">Consultar por WhatsApp</a>
-            </div>
-          </article>
-
-          <article class="service">
-            <div class="service__media">
-              <img src="https://iili.io/BCGaWAl.png" alt="Oleas texanas" />
-            </div>
-            <div class="service__body">
-              <h3>Oleas texanas</h3>
-              <p>Opciones ideales para cercos vivos y terminaciones verdes con presencia, orden visual y naturalidad.</p>
-              <a class="btn btn--primary" href="https://wa.me/5491126447230?text=Hola%20quiero%20consultar%20por%20oleas%20texanas." target="_blank" rel="noopener">Consultar por WhatsApp</a>
-            </div>
-          </article>
-
-          <article class="service">
-            <div class="service__media">
-              <img src="https://iili.io/BCMwiNt.png" alt="Cercos vivos" />
-            </div>
-            <div class="service__body">
-              <h3>Cercos vivos</h3>
-              <p>Soluciones naturales para delimitar, decorar y dar privacidad a distintos espacios exteriores.</p>
-              <a class="btn btn--primary" href="https://wa.me/5491126447230?text=Hola%20quiero%20consultar%20por%20cercos%20vivos." target="_blank" rel="noopener">Consultar por WhatsApp</a>
-            </div>
-          </article>
-
-          <article class="service">
-            <div class="service__media">
-              <img src="https://iili.io/BCGenm7.png" alt="Riego automatico" />
-            </div>
-            <div class="service__body">
-              <h3>Riego automatico</h3>
-              <p>Instalaciones pensadas para mantener el espacio verde en mejores condiciones con mas practicidad.</p>
-              <a class="btn btn--primary" href="https://wa.me/5491126447230?text=Hola%20quiero%20consultar%20por%20riego%20automatico." target="_blank" rel="noopener">Consultar por WhatsApp</a>
-            </div>
-          </article>
-
-          <article class="service">
-            <div class="service__media">
-              <img src="https://iili.io/BCMd0UG.png" alt="Nivelacion" />
-            </div>
-            <div class="service__body">
-              <h3>Nivelacion</h3>
-              <p>Preparacion del terreno para una colocacion prolija y un mejor resultado final en cada trabajo.</p>
-              <a class="btn btn--primary" href="https://wa.me/5491126447230?text=Hola%20quiero%20consultar%20por%20nivelacion." target="_blank" rel="noopener">Consultar por WhatsApp</a>
-            </div>
-          </article>
-
-          <article class="service">
-            <div class="service__media">
-              <img src="https://iili.io/BCMAwuI.png" alt="Obra completa" />
-            </div>
-            <div class="service__body">
-              <h3>Obra completa</h3>
-              <p>Resolucion integral del trabajo, desde la preparacion hasta la terminacion del espacio verde.</p>
-              <a class="btn btn--primary" href="https://wa.me/5491126447230?text=Hola%20quiero%20consultar%20por%20obra%20completa." target="_blank" rel="noopener">Consultar por WhatsApp</a>
-            </div>
-          </article>
-        </div>
-
-        <div class="info-strip">
-          <article class="info-strip__item">
-            <h3>Vivero online</h3>
-            <p>Opciones seleccionadas para sumar verde, vida y presencia natural a cada espacio.</p>
-          </article>
-
-          <article class="info-strip__item">
-            <h3>Plantas de interior y exterior</h3>
-            <p>Variedad de plantas para patios, jardines, galerias y distintos rincones del hogar.</p>
-          </article>
-
-          <article class="info-strip__item">
-            <h3>Envios en Gran Buenos Aires</h3>
-            <p>Realizamos envios en Gran Buenos Aires y alrededores con opciones adaptadas a cada pedido.</p>
-          </article>
-
-          <article class="info-strip__item">
-            <h3>Pedidos simples y comodos</h3>
-            <p>Se toma una seña del 50% y el resto se abona al recibir las plantas.</p>
-          </article>
-        </div>
-      </div>
     </section>
 
-    <section id="proceso">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Como trabajamos</h2>
-            <p>Cada proyecto se trabaja de forma personalizada para encontrar la mejor opcion segun el espacio, la necesidad y el resultado buscado.</p>
-          </div>
+    <!-- Services Section -->
+    <section class="services" id="servicios">
+        <div class="container">
+            <h2 class="section-title fade-in">Nuestros servicios</h2>
+            <p class="section-subtitle fade-in">Soluciones completas para espacios verdes con enfoque natural y profesional</p>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon"> grass </div>
+                    <h3>Grama Bahiana Pura</h3>
+                    <p>Alfombras naturales de grama bahiana para lograr espacios verdes prolijos, frescos y duraderos.</p>
+                    <a href="https://wa.me/5491126447230?text=Hola%20quiero%20consultar%20por%20grama%20bahiana%20pura." class="cta-button">Consultar</a>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon"> fence </div>
+                    <h3>Cercos Vivos</h3>
+                    <p>Soluciones naturales para delimitar, decorar y dar privacidad a distintos espacios exteriores.</p>
+                    <a href="https://wa.me/5491126447230?text=Hola%20quiero%20consultar%20por%20cercos%20vivos." class="cta-button">Consultar</a>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon"> water_drop </div>
+                    <h3>Riego Automático</h3>
+                    <p>Instalaciones pensadas para mantener el espacio verde en mejores condiciones con más practicidad.</p>
+                    <a href="https://wa.me/5491126447230?text=Hola%20quiero%20consultar%20por%20riego%20automatico." class="cta-button">Consultar</a>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon"> landscape </div>
+                    <h3>Obra Completa</h3>
+                    <p>Resolución integral del trabajo, desde la preparación hasta la terminación del espacio verde.</p>
+                    <a href="https://wa.me/5491126447230?text=Hola%20quiero%20consultar%20por%20obra%20completa." class="cta-button">Consultar</a>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon"> nursery </div>
+                    <h3>Vivero Online</h3>
+                    <p>Opciones seleccionadas para sumar verde, vida y presencia natural a cada espacio.</p>
+                    <a href="https://wa.me/5491126447230?text=Hola%20quiero%20consultar%20por%20vivero%20online." class="cta-button">Consultar</a>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon"> local_florist </div>
+                    <h3>Plantas Interior/Exterior</h3>
+                    <p>Variedad de plantas para patios, jardines, galerías y distintos rincones del hogar.</p>
+                    <a href="https://wa.me/5491126447230?text=Hola%20quiero%20consultar%20por%20plantas%20de%20interior%20y%20exterior." class="cta-button">Consultar</a>
+                </div>
+            </div>
         </div>
-
-        <div class="steps">
-          <article class="step">
-            <div class="step__num">1</div>
-            <h3>Nos contas que necesitas</h3>
-            <p>Puede ser grama bahiana, cercos vivos, riego, nivelacion o una obra completa.</p>
-          </article>
-
-          <article class="step">
-            <div class="step__num">2</div>
-            <h3>Nos pasas fotos, medidas o zona</h3>
-            <p>Con esa informacion se puede orientar mejor la propuesta y definir la mejor opcion para cada caso.</p>
-          </article>
-
-          <article class="step">
-            <div class="step__num">3</div>
-            <h3>Evaluamos la mejor opcion</h3>
-            <p>Se define la solucion segun el espacio, el tipo de trabajo y la terminacion buscada.</p>
-          </article>
-
-          <article class="step">
-            <div class="step__num">4</div>
-            <h3>Coordinamos el trabajo</h3>
-            <p>Una vez resuelta la cotizacion, se avanza con entrega, colocacion o la obra completa.</p>
-          </article>
-        </div>
-      </div>
     </section>
 
-    <section id="galeria">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Trabajos reales</h2>
-            <p>Trabajos y espacios reales donde se combinan alfombras naturales, cercos vivos, plantas y terminaciones pensadas para cada proyecto.</p>
-          </div>
-        </div>
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonios">
+        <div class="container">
+            <h2 class="section-title fade-in">Qué dicen nuestros clientes</h2>
+            <p class="section-subtitle fade-in">La confianza de quienes ya eligieron transformar sus espacios</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="stars">*****</div>
+                    <p class="testimonial-text">"Excelente trabajo profesional. Transformaron mi jardín por completo. El césped bahiana quedó perfecto y el seguimiento fue impecable."</p>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/50x50/4CAF50/ffffff?text=M" alt="María" class="author-avatar">
+                        <div class="author-info">
+                            <h4>María González</h4>
+                            <p>San Isidro</p>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="gallery">
-          <a class="gallery__item" href="https://iili.io/BCVR8Qt.png" target="_blank" rel="noopener"><img src="https://iili.io/BCVR8Qt.png" alt="Trabajo real 1" /></a>
-          <a class="gallery__item" href="https://iili.io/BCVRNvR.png" target="_blank" rel="noopener"><img src="https://iili.io/BCVRNvR.png" alt="Trabajo real 2" /></a>
-          <a class="gallery__item" href="https://iili.io/BCVRQu2.png" target="_blank" rel="noopener"><img src="https://iili.io/BCVRQu2.png" alt="Trabajo real 3" /></a>
-          <a class="gallery__item" href="https://iili.io/BCVRvjI.png" target="_blank" rel="noopener"><img src="https://iili.io/BCVRvjI.png" alt="Trabajo real 4" /></a>
-          <a class="gallery__item" href="https://iili.io/BCVYABt.png" target="_blank" rel="noopener"><img src="https://iili.io/BCVYABt.png" alt="Trabajo real 5" /></a>
-          <a class="gallery__item" href="https://iili.io/BCVYwYb.png" target="_blank" rel="noopener"><img src="https://iili.io/BCVYwYb.png" alt="Trabajo real 6" /></a>
-          <a class="gallery__item" href="https://iili.io/BCVYB2a.png" target="_blank" rel="noopener"><img src="https://iili.io/BCVYB2a.png" alt="Trabajo real 7" /></a>
-          <a class="gallery__item" href="https://iili.io/BCVYY2s.png" target="_blank" rel="noopener"><img src="https://iili.io/BCVYY2s.png" alt="Trabajo real 8" /></a>
+                <div class="testimonial-card fade-in">
+                    <div class="stars">*****</div>
+                    <p class="testimonial-text">"Los cercos vivos de oleas texanas quedaron espectaculares. Muy profesionales y puntuales. Totalmente recomendables."</p>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/50x50/4CAF50/ffffff?text=C" alt="Carlos" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Carlos Rodríguez</h4>
+                            <p>Pilar</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="stars">*****</div>
+                    <p class="testimonial-text">"Contraté la obra completa y el resultado superó mis expectativas. Atención personalizada y trabajo de alta calidad."</p>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/50x50/4CAF50/ffffff?text=A" alt="Ana" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Ana Martínez</h4>
+                            <p>Tigre</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <section>
-      <div class="container">
-        <div class="highlight">
-          <div class="highlight__wrap">
-            <div class="highlight__content">
-              <h2>Soluciones completas para transformar espacios verdes</h2>
-              <p>Desde alfombras naturales y cercos vivos hasta vivero online, plantas de interior y exterior, riego, nivelacion y obra completa, cada trabajo se piensa para lograr un resultado natural, prolijo y duradero.</p>
+    <!-- Gallery Section -->
+    <section class="gallery" id="trabajos">
+        <div class="container">
+            <h2 class="section-title fade-in">Nuestros trabajos</h2>
+            <p class="section-subtitle fade-in">Transformaciones reales que inspiran</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1585435557343-3b09503ec46e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Césped natural">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h4>Césped Bahiana</h4>
+                            <p>Instalación profesional</p>
+                        </div>
+                    </div>
+                </div>
 
-              <ul class="checklist">
-                <li><span class="check">✓</span><span>Alfombras naturales de grama bahiana</span></li>
-                <li><span class="check">✓</span><span>Oleas texanas y cercos vivos</span></li>
-                <li><span class="check">✓</span><span>Vivero online y plantas de interior y exterior</span></li>
-                <li><span class="check">✓</span><span>Riego automatico y nivelacion</span></li>
-                <li><span class="check">✓</span><span>Obra completa con enfoque integral</span></li>
-              </ul>
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1598800099312-1e8a5f1a5e20?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Cercos vivos">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h4>Cercos Vivos</h4>
+                            <p>Oleas texanas</p>
+                        </div>
+                    </div>
+                </div>
 
-              <a class="btn btn--primary" href="https://wa.me/5491126447230?text=Hola%20quiero%20consultar%20por%20una%20solucion%20completa%20para%20mi%20espacio%20verde." target="_blank" rel="noopener">Consultar proyecto</a>
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Jardín completo">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h4>Obra Completa</h4>
+                            <p>Transformación integral</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1580421662515-6a5a8e5c7c9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Riego automático">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h4>Riego Automático</h4>
+                            <p>Sistema eficiente</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1593696140826-c58b021acf8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Plantas decorativas">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h4>Vivero Online</h4>
+                            <p>Plantas seleccionadas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1558904561-098e0a855b3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Terminación perfecta">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h4>Terminación Perfecta</h4>
+                            <p>Detalles profesionales</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="highlight__media">
-              <img src="https://iili.io/BCMAwuI.png" alt="Obra completa" />
-            </div>
-          </div>
         </div>
-      </div>
     </section>
 
-    <section id="variedades">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Las mas elegidas</h2>
-            <p>Variedades de cercos vivos muy elegidas por nuestros clientes, con opciones para distintos espacios, tamaños y necesidades.</p>
-          </div>
+    <!-- Process Section -->
+    <section class="process" id="proceso">
+        <div class="container">
+            <h2 class="section-title fade-in">Cómo trabajamos</h2>
+            <p class="section-subtitle fade-in">Un proceso simple y transparente para lograr el resultado que buscás</p>
+            
+            <div class="process-timeline">
+                <div class="process-step fade-in">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Nos contás que necesitás</h3>
+                    <p class="step-description">Puede ser grama bahiana, cercos vivos, riego, nivelación o una obra completa.</p>
+                </div>
+
+                <div class="process-step fade-in">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Nos pasás fotos y medidas</h3>
+                    <p class="step-description">Con esa información se puede orientar mejor la propuesta y definir la mejor opción.</p>
+                </div>
+
+                <div class="process-step fade-in">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Evaluamos la mejor opción</h3>
+                    <p class="step-description">Se define la solución según el espacio, el tipo de trabajo y la terminación buscada.</p>
+                </div>
+
+                <div class="process-step fade-in">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Coordinamos el trabajo</h3>
+                    <p class="step-description">Una vez resuelta la cotización, se avanza con entrega, colocación o la obra completa.</p>
+                </div>
+            </div>
         </div>
-
-        <div class="grid-3">
-          <article class="service">
-            <div class="service__media">
-              <img src="https://iili.io/BCe8fCG.jpg" alt="Cipres Leylandi" />
-            </div>
-            <div class="service__body">
-              <h3>Cipres Leylandi</h3>
-              <p>Un clasico infalible para cercos vivos. Crece rapido, es tupido y mantiene presencia verde durante todo el año.</p>
-              <a class="btn btn--primary" href="https://wa.me/5491126447230?text=Hola%20quiero%20consultar%20por%20Cipres%20Leylandi." target="_blank" rel="noopener">Consultar por WhatsApp</a>
-            </div>
-          </article>
-
-          <article class="service">
-            <div class="service__media">
-              <img src="https://iili.io/BCe6iKu.webp" alt="Photinia" />
-            </div>
-            <div class="service__body">
-              <h3>Photinia</h3>
-              <p>Una opcion muy buscada por su color y contraste visual, ideal para darle vida y presencia al jardin.</p>
-              <a class="btn btn--primary" href="https://wa.me/5491126447230?text=Hola%20quiero%20consultar%20por%20Photinia." target="_blank" rel="noopener">Consultar por WhatsApp</a>
-            </div>
-          </article>
-
-          <article class="service">
-            <div class="service__media">
-              <img src="https://iili.io/BCet9iN.png" alt="Olea Texana o Aurea" />
-            </div>
-            <div class="service__body">
-              <h3>Olea Texana / Aurea</h3>
-              <p>Resistente, noble y de muy bajo mantenimiento. Una alternativa natural y elegante para exterior.</p>
-              <a class="btn btn--primary" href="https://wa.me/5491126447230?text=Hola%20quiero%20consultar%20por%20Olea%20Texana%20o%20Aurea." target="_blank" rel="noopener">Consultar por WhatsApp</a>
-            </div>
-          </article>
-
-          <article class="service">
-            <div class="service__media">
-              <img src="https://iili.io/BCep6aS.png" alt="Eugenia" />
-            </div>
-            <div class="service__body">
-              <h3>Eugenia</h3>
-              <p>Elegante, prolija y adaptable a podas formales. Muy elegida para cercos vivos con terminacion cuidada.</p>
-              <a class="btn btn--primary" href="https://wa.me/5491126447230?text=Hola%20quiero%20consultar%20por%20Eugenia." target="_blank" rel="noopener">Consultar por WhatsApp</a>
-            </div>
-          </article>
-
-        </div>
-      </div>
     </section>
 
-    <section id="faq">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Preguntas frecuentes</h2>
-            <p>Respuestas a consultas frecuentes sobre servicios, productos y formas de trabajo.</p>
-          </div>
-        </div>
+    <!-- Contact Section -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info fade-in">
+                    <h2>Comenzá a transformar tu espacio</h2>
+                    <p>Dejanos tus datos y te contactamos a la brevedad para asesorarte sin compromiso sobre el proyecto que tenés en mente.</p>
+                    <p><strong>Teléfono:</strong> +54 9 11 2644-7230</p>
+                    <p><strong>WhatsApp:</strong> Disponible 24/7</p>
+                    <p><strong>Envíos:</strong> Gran Buenos Aires y alrededores</p>
+                </div>
 
-        <div class="faq">
-          <details open>
-            <summary>Realizan cotizaciones por WhatsApp?</summary>
-            <p>Si. Las consultas y cotizaciones se realizan por WhatsApp segun el tipo de trabajo, medidas, zona y necesidad puntual.</p>
-          </details>
-
-          <details>
-            <summary>Trabajan con obra completa?</summary>
-            <p>Si. Se puede consultar por una resolucion integral que incluya grama, cercos vivos, nivelacion, riego y terminaciones.</p>
-          </details>
-
-          <details>
-            <summary>Puedo consultar por grama bahiana y cercos vivos?</summary>
-            <p>Si. Se pueden pedir cotizaciones por productos puntuales o por una propuesta mas completa para el espacio.</p>
-          </details>
-
-          <details>
-            <summary>El valor depende de medidas y zona?</summary>
-            <p>Si. El valor puede variar segun medidas, zona, cantidad y tipo de trabajo a realizar.</p>
-          </details>
-
-          <details>
-            <summary>Se realizan envios?</summary>
-            <p>Si. Realizamos envios en todo Gran Buenos Aires y alrededores, segun disponibilidad y tipo de pedido.</p>
-          </details>
-
-          <details>
-            <summary>Como se toman los pedidos?</summary>
-            <p>Los pedidos se toman con seña del 50% y el saldo restante se abona al recibir las plantas.</p>
-          </details>
-
-          <details>
-            <summary>Se puede coordinar segun cada necesidad?</summary>
-            <p>Si. Cada trabajo puede evaluarse segun el lugar, el uso del espacio y el tipo de terminacion buscada.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="cta">
-          <div class="cta__inner">
-            <div>
-              <h2>Consulta tu proyecto</h2>
-              <p>Si queres consultar por grama bahiana, cercos vivos, vivero online, plantas de interior y exterior, riego, nivelacion u obra completa, escribinos por WhatsApp.</p>
+                <div class="contact-form fade-in">
+                    <h3>Contacto rápido</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Tu nombre</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono/WhatsApp</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Servicio de interés</label>
+                            <input type="text" id="service" name="service" placeholder="Ej: Césped bahiana, cercos vivos, etc.">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" placeholder="Contanos un poco más de tu proyecto..."></textarea>
+                        </div>
+                        <button type="submit" class="form-submit">Enviar consulta</button>
+                    </form>
+                </div>
             </div>
-            <a class="btn btn--primary" href="https://wa.me/5491126447230?text=Hola%20quiero%20hacer%20una%20consulta%20por%20mi%20espacio%20verde." target="_blank" rel="noopener">Pedir cotizacion por WhatsApp</a>
-          </div>
         </div>
-      </div>
     </section>
-  </main>
 
-  <footer>
-    <div class="container">
-      <div class="footer">
-        <div>
-          <h3>Cesped Natural MyS</h3>
-          <p>Creadores de espacios verdes.</p>
-          <p class="creator">Creado y diseñado por <a href="https://ciborg347oficial.onrender.com" target="_blank" rel="noopener">Ciborg 347</a></p>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Cesped Natural MyS</h4>
+                    <p>Creadores de espacios verdes con soluciones naturales para cada proyecto. Especialistas en cercos vivos, vivero online y plantas de interior y exterior.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Servicios</h4>
+                    <p>Grama Bahiana Pura</p>
+                    <p>Cercos Vivos</p>
+                    <p>Riego Automático</p>
+                    <p>Obra Completa</p>
+                    <p>Vivero Online</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><a href="https://wa.me/5491126447230">WhatsApp: +54 9 11 2644-7230</a></p>
+                    <p>Envíos en Gran Buenos Aires</p>
+                    <p>Atención personalizada</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Cesped Natural MyS. Todos los derechos reservados.</p>
+            </div>
         </div>
+    </footer>
 
-        <div class="footer__links">
-          <a href="https://wa.me/5491126447230?text=Hola%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener">WhatsApp: 11 2644-7230</a>
-          <a href="https://www.instagram.com/cespednatural_mys/" target="_blank" rel="noopener">Instagram: @cespednatural_mys</a>
-          <a href="#servicios">Ver servicios</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5491126447230?text=Hola%20quiero%20consultar%20por%20grama%20bahiana%20y%20obra%20completa." class="whatsapp-float" target="_blank">
+        <span>WhatsApp</span>
+    </a>
 
-  <a class="wa-float" href="https://wa.me/5491126447230?text=Hola%20quiero%20consultar%20por%20grama%20bahiana." target="_blank" rel="noopener" aria-label="WhatsApp">
-    <img src="https://iili.io/BdFrUs1.webp" alt="WhatsApp" />
-  </a>
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
 
-  <script>
-    const body = document.body;
-    const themeBtn = document.getElementById('themeBtn');
-    const mobileThemeBtn = document.getElementById('mobileThemeBtn');
-    const savedTheme = localStorage.getItem('mys-theme');
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
 
-    if(savedTheme === 'dark'){
-      body.classList.add('dark');
-    }
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
 
-    function toggleTheme(){
-      body.classList.toggle('dark');
-      localStorage.setItem('mys-theme', body.classList.contains('dark') ? 'dark' : 'light');
-    }
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
-    themeBtn.addEventListener('click', toggleTheme);
-    mobileThemeBtn.addEventListener('click', toggleTheme);
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = '#ffffff';
+                header.style.backdropFilter = 'none';
+            }
+        });
 
-    const menuBtn = document.getElementById('menuBtn');
-    const mobilePanel = document.getElementById('mobilePanel');
+        // Counter animation
+        const counters = document.querySelectorAll('.stat-number');
+        const speed = 200;
 
-    menuBtn.addEventListener('click', () => {
-      mobilePanel.classList.toggle('open');
-    });
+        const startCounting = (counter) => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            const increment = target / speed;
 
-    mobilePanel.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => mobilePanel.classList.remove('open'));
-    });
+            const updateCount = () => {
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(updateCount, 1);
+                } else {
+                    counter.innerText = target + (counter.parentElement.textContent.includes('Años') ? '' : '+');
+                }
+            };
 
-    const footer = document.querySelector('footer');
-    const waFloat = document.querySelector('.wa-float');
+            updateCount();
+        };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        waFloat.style.opacity = entry.isIntersecting ? '0' : '1';
-        waFloat.style.pointerEvents = entry.isIntersecting ? 'none' : 'auto';
-        waFloat.style.transform = entry.isIntersecting ? 'translateY(20px)' : 'translateY(0)';
-      });
-    }, { threshold: 0.15 });
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-    observer.observe(footer);
-  </script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Start counter animation if it's a stat number
+                    if (entry.target.classList.contains('stat-number')) {
+                        startCounting(entry.target);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Observe stat numbers
+        counters.forEach(counter => {
+            observer.observe(counter);
+        });
+
+        // Contact form submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(contactForm);
+            const name = formData.get('name');
+            const phone = formData.get('phone');
+            const service = formData.get('service');
+            const message = formData.get('message');
+            
+            // Create WhatsApp message
+            const whatsappMessage = `Hola, soy ${name}. Estoy interesado en ${service || 'sus servicios'}. ${message ? 'Mensaje adicional: ' + message : ''} Mi teléfono: ${phone}`;
+            
+            // Open WhatsApp with pre-filled message
+            window.open(`https://wa.me/5491126447230?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+            
+            // Reset form
+            contactForm.reset();
+        });
+
+        // Gallery lightbox effect (simple implementation)
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // This could be expanded to a full lightbox
+                console.log('Gallery item clicked');
+            });
+        });
+
+        // Add loading states to buttons
+        document.querySelectorAll('.cta-button, .btn-primary, .form-submit').forEach(button => {
+            button.addEventListener('click', function(e) {
+                if (this.href) {
+                    // For links, add a small loading state
+                    const originalText = this.innerText;
+                    this.innerHTML = '<span class="loading"></span> Enviando...';
+                    setTimeout(() => {
+                        this.innerText = originalText;
+                    }, 1000);
+                }
+            });
+        });
+
+        // Performance optimization: Lazy loading for images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Add some micro-interactions
+        document.querySelectorAll('.service-card, .testimonial-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
 </body>
 </html>
- 
